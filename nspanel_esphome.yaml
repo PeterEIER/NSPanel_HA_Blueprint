@@ -712,7 +712,15 @@ text_sensor:
 
 ##### START - SWITCH CONFIGURATION #####
 switch:
-
+  ##### TFT file upload fix #####
+  - platform: gpio
+    id: panel_power
+    entity_category: config
+    pin:
+      number: 4
+      inverted: true
+    restore_mode: ALWAYS_ON
+ 
   ##### Notification unread #####
   - name: ${device_name} Notification unread
     platform: template
